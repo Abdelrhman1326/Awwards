@@ -1,33 +1,88 @@
-/* 1. Import Tailwind v4 core */
 @import "tailwindcss";
 
-/* 2. Define your custom theme variables (Adjust colors to your liking) */
-:root {
-  --accent: #646cff;
-  --accent-bg: #f9f9f9;
-  --accent-border: #747bff;
-  --border: #e2e8f0;
-  --text-h: #1a1a1a;
-  --social-bg: #ffffff;
-  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+/* 1. THEME DEFINITION - The "Brain" of your project */
+@theme {
+  /* --- CUSTOM FONTS --- */
+  --font-circular: "circular-web", sans-serif;
+  --font-general: "general", sans-serif;
+  --font-robert-medium: "robert-medium", sans-serif;
+  --font-robert-regular: "robert-regular", sans-serif;
+  --font-zentry: "zentry", sans-serif;
+
+  /* --- CUSTOM COLORS (Replacing :root variables) --- */
+  --color-accent: #646cff;
+  --color-accent-bg: #f9f9f9;
+  --color-accent-border: #747bff;
+  --color-ui-border: #e2e8f0;
+  --color-text-h: #1a1a1a;
+  --color-social-bg: #ffffff;
+
+  /* --- CUSTOM SHADOWS --- */
+  --shadow-custom: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
 
-/* 3. Your custom component styles */
+/* 2. BASE STYLES - Loading Font Files & Body Settings */
+@layer base {
+  @font-face {
+    font-family: 'circular-web';
+    src: url('/fonts/circularweb-book.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'general';
+    src: url('/fonts/general.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'robert-medium';
+    src: url('/fonts/robert-medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'robert-regular';
+    src: url('/fonts/robert-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'zentry';
+    src: url('/fonts/zentry-regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body {
+    @apply font-general antialiased;
+    width: 100dvw;
+    background-color: #dfdff0;
+    overflow-x: hidden;
+    margin: 0;
+  }
+}
+
+/* 3. CUSTOM COMPONENT STYLES (Modern Nesting Enabled) */
 .counter {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
+  color: var(--color-accent);
+  background: var(--color-accent-bg);
   border: 2px solid transparent;
   transition: border-color 0.3s;
   margin-bottom: 24px;
 
   &:hover {
-    border-color: var(--accent-border);
+    border-color: var(--color-accent-border);
   }
   &:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--color-accent);
     outline-offset: 2px;
   }
 }
@@ -35,9 +90,7 @@
 .hero {
   position: relative;
 
-  .base,
-  .framework,
-  .vite {
+  .base, .framework, .vite {
     inset-inline: 0;
     margin: 0 auto;
   }
@@ -48,8 +101,7 @@
     z-index: 0;
   }
 
-  .framework,
-  .vite {
+  .framework, .vite {
     position: absolute;
   }
 
@@ -57,8 +109,7 @@
     z-index: 1;
     top: 34px;
     height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-    scale(1.4);
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.4);
   }
 
   .vite {
@@ -66,8 +117,7 @@
     top: 107px;
     height: 26px;
     width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-    scale(0.8);
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg) scale(0.8);
   }
 }
 
@@ -87,7 +137,7 @@
 
 #next-steps {
   display: flex;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--color-ui-border);
   text-align: left;
 
   & > div {
@@ -111,11 +161,11 @@
 }
 
 #docs {
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--color-ui-border);
 
   @media (max-width: 1024px) {
     border-right: none;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--color-ui-border);
   }
 }
 
@@ -131,10 +181,10 @@
   }
 
   a {
-    color: var(--text-h);
+    color: var(--color-text-h);
     font-size: 16px;
     border-radius: 6px;
-    background: var(--social-bg);
+    background: var(--color-social-bg);
     display: flex;
     padding: 6px 12px;
     align-items: center;
@@ -143,7 +193,7 @@
     transition: box-shadow 0.3s;
 
     &:hover {
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-custom);
     }
     .button-icon {
       height: 18px;
@@ -170,7 +220,7 @@
 
 #spacer {
   height: 88px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--color-ui-border);
   @media (max-width: 1024px) {
     height: 48px;
   }
@@ -180,8 +230,7 @@
   position: relative;
   width: 100%;
 
-  &::before,
-  &::after {
+  &::before, &::after {
     content: '';
     position: absolute;
     top: -4.5px;
@@ -190,10 +239,10 @@
 
   &::before {
     left: 0;
-    border-left-color: var(--border);
+    border-left-color: var(--color-ui-border);
   }
   &::after {
     right: 0;
-    border-right-color: var(--border);
+    border-right-color: var(--color-ui-border);
   }
 }
