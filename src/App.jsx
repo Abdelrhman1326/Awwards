@@ -3,7 +3,9 @@ import './App.css'
 
 const App = () => {
     return (
-        <div>App</div>
+        <main>
+            <h1 className="text-5xl text-orange-500 font-bold">Welcome To Awwards</h1>
+        </main>
     )
 }
 export default App
