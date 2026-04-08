@@ -6,7 +6,8 @@ const Hero = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [loadedVideos, setLoadedVideos] = useState(0);
 
-    const totalVideos = 4;
+    const totalVideos = 3;
+    const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
     const nextVideoRef = useRef(null);
 
     const handleVideoLoad = () => {
@@ -16,7 +17,7 @@ const Hero = () => {
     const handleMiniVdClick = () => {
         setHasClicked(true);
 
-        setCurrentIndex((prevIndex) => ((prevIndex < totalVideos) ? prevIndex + 1 : 1));
+        setCurrentIndex(upcomingVideoIndex);
     }
 
     const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
