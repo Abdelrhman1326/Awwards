@@ -27,7 +27,7 @@ const Hero = () => {
                 id="video-frame"
                 className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75">
 
-                <div className="mask-clip-path absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 size-64 cursor-pointer overflow-hidden rounded-lg bg-white">
+                <div className="mask-clip-path absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
                     <div
                         className="flex items-center justify-center h-full origin-center scale-50 opacity-0 transition-all duration-500 ease-in-out hover:scale-100 hover:opacity-100 "
                         onClick={() => handleMiniVdClick()}
