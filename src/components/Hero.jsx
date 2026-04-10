@@ -14,6 +14,7 @@ const Hero = () => {
     const backgroundVideoRef = useRef(null);
     const miniVideoRef = useRef(null);
     const nextVideoRef = useRef(null);
+    const miniContainerRef = useRef(null); // Ref for the hover container
 
     const getVideoSrc = (index) => `videos/hero-${index + 1}.mp4`;
 
@@ -23,29 +24,29 @@ const Hero = () => {
 
     const handleMiniVideoClick = () => {
         setHasClicked(true);
-        // Step forward: Background catches up to the previewed video
         setCurrentIndex((prev) => (prev + 1) % totalVideos);
     };
 
-    // Maintain the preview always one step ahead
     useEffect(() => {
         setPreviewIndex((currentIndex + 1) % totalVideos);
     }, [currentIndex]);
 
-    // Show loading overlay until the initial batch is ready
     useEffect(() => {
         if (loadedVideos >= 2) {
             setIsLoading(false);
         }
     }, [loadedVideos]);
 
-    // GSAP Expansion Logic
+    // GSAP Expansion & Hover Reset Logic
     useGSAP(() => {
         if (hasClicked && nextVideoRef.current) {
-            // 1. Reset animator visibility
-            gsap.set(nextVideoRef.current, { visibility: 'visible' });
+            // 1. FORCED HOVER RESET: Disable pointer events so Tailwind "forgets" the hover state
+            gsap.set(miniContainerRef.current, { pointerEvents: 'none' });
 
-            // 2. Animate animator from center to full-screen
+            // 2. Prepare the expanding video
+            gsap.set(nextVideoRef.current, { visibility: 'visible', opacity: 1 });
+
+            // 3. Animate the expansion
             gsap.to(nextVideoRef.current, {
                 transformOrigin: 'center center',
                 width: '100%',
@@ -56,8 +57,11 @@ const Hero = () => {
                     nextVideoRef.current?.play().catch(() => {});
                 },
                 onComplete: () => {
-                    // 3. Hide animator so the background (already updated) takes over
+                    // Hide the animator video once expansion is done
                     gsap.set(nextVideoRef.current, { visibility: 'hidden' });
+
+                    // 4. RE-ENABLE HOVER: User must move mouse away and back to hover again
+                    gsap.set(miniContainerRef.current, { pointerEvents: 'all' });
                 }
             });
         }
@@ -81,7 +85,7 @@ const Hero = () => {
                 id="video-frame"
                 className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
             >
-                {/* 1. THE MAIN BACKGROUND (Matches Current) */}
+                {/* 1. THE MAIN BACKGROUND */}
                 <video
                     key={`bg-${currentIndex}`}
                     ref={backgroundVideoRef}
@@ -94,6 +98,7 @@ const Hero = () => {
                 {/* 2. THE MINI PREVIEW (The Trigger) */}
                 <div className="mask-clip-path absolute left-1/2 top-1/2 z-50 size-64 -translate-x-1/2 -translate-y-1/2 cursor-pointer overflow-hidden rounded-lg">
                     <div
+                        ref={miniContainerRef}
                         className="flex h-full items-center justify-center origin-center scale-50 opacity-0 transition-all duration-500 ease-in-out hover:scale-100 hover:opacity-100"
                         onClick={handleMiniVideoClick}
                     >
@@ -108,7 +113,7 @@ const Hero = () => {
                     </div>
                 </div>
 
-                {/* 3. THE EXPANDING ANIMATOR (Matches Current) */}
+                {/* 3. THE EXPANDING ANIMATOR */}
                 <video
                     key={`next-${currentIndex}`}
                     ref={nextVideoRef}
