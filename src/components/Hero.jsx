@@ -60,6 +60,15 @@ const Hero = () => {
                         />
                     </div>
                 </div>
+
+                {/* -- typography -- */}
+                <h1 className="special-font font-zentry text-6xl hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
+                    G<b>a</b>MING
+                </h1>
+                <div className="hero-heading absolute top-15 left-10 z-40 text-blue-75">
+                    <h1 className="special-font font-zentry text-6xl">REDEFI<b>N</b>E</h1>
+                    <p className="text-xl font-robert-regular mt-2 top">Enter the Metagame Layer <br /> Unleash the Play Economy</p>
+                </div>
             </div>
         </div>
     )

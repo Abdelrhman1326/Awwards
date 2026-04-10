@@ -84,6 +84,13 @@
   }
 }
 
+@layer utilities {
+  .special-font b {
+    font-family: "Zentry";
+    font-feature-settings: "ss01" on;
+  }
+}
+
 /* 3. CUSTOM COMPONENT STYLES (Modern Nesting Enabled) */
 .counter {
   font-size: 16px;
