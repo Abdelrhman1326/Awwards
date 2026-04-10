@@ -14,9 +14,8 @@ const Hero = () => {
         setLoadedVideos((prev) => prev + 1);
     }
 
-    const handleMiniVdClick = () => {
+    const handleMiniVideoClick = () => {
         setHasClicked(true);
-
         setCurrentIndex(upcomingVideoIndex);
     }
 
@@ -28,19 +27,34 @@ const Hero = () => {
                 id="video-frame"
                 className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75">
 
+                {/* --- 1. THE MAIN BACKGROUND VIDEO --- */}
+                {/* This occupies the full screen background */}
+                <video
+                    ref={nextVideoRef}
+                    src={getVideoSrc(currentIndex)}
+                    loop
+                    autoPlay
+                    muted
+                    id="main-video"
+                    className="absolute inset-0 size-full object-cover object-center"
+                    onLoadedData={handleVideoLoad}
+                />
+
+                {/* --- 2. THE MINI INTERACTIVE PORTAL --- */}
+                {/* This is the small box in the center that you click */}
                 <div className="mask-clip-path absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
                     <div
                         className="flex items-center justify-center h-full origin-center scale-50 opacity-0 transition-all duration-500 ease-in-out hover:scale-100 hover:opacity-100 "
-                        onClick={() => handleMiniVdClick()}
+                        onClick={handleMiniVideoClick}
                     >
                         <video
                             ref={nextVideoRef}
-                            src={getVideoSrc(currentIndex + 1)}
+                            src={getVideoSrc(upcomingVideoIndex)}
                             loop
                             autoPlay
                             muted
                             playsInline
-                            id="current-video"
+                            id="next-video-preview"
                             className="size-64 origin-center scale-150 object-cover object-center"
                             onLoadedData={handleVideoLoad}
                         />
