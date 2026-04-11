@@ -125,24 +125,22 @@ const Hero = () => {
                 />
 
                 {/* TYPOGRAPHY */}
-                <h1 className="special-font font-zentry text-[200px] absolute bottom-[-50px] right-10 z-40 text-blue-75 uppercase leading-[0.75]">
+                <h1 className="special-font font-zentry text-[48px] sm:text-[120px] lg:text-[200px] absolute bottom-[20px] right-[20px] z-40 text-blue-75 uppercase leading-[0.75]">
                     G<b>a</b>MING
                 </h1>
 
-                <div className="absolute left-10 top-35 z-40 text-blue-75">
-                    <h1 className="special-font font-zentry text-[205px] leading-[0.8] uppercase">
+                <div className="absolute left-[20px] top-35 z-40 text-blue-75">
+                    <h1 className="special-font font-zentry text-[48px] sm:text-[120px] lg:text-[205px] leading-[0.8] uppercase">
                         REDEFI<b>N</b>E
                     </h1>
-                    <p className="mt-[20px] max-w-64 text-xl font-robert-regular">
+                    <p className="mt-[10px] max-w-64 text-base sm:text-lg lg:text-xl font-robert-regular">
                         Enter the Metagame Layer <br /> Unleash the Play Economy
                     </p>
                 </div>
             </div>
 
             {/* Back-layer Text */}
-            <h1 className="special-font font-zentry text-[200px] absolute right-10 bottom-6 z-0 text-black uppercase leading-0">
-                G<b>a</b>MING
-            </h1>
+
         </div>
     );
 };
