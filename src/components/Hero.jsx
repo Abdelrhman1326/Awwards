@@ -2,6 +2,9 @@ import React, { useRef, useState, useEffect } from 'react';
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
+import Button from "./Button";
+import {TiLocationArrow} from "react-icons/ti";
+
 const Hero = () => {
     const totalVideos = 3;
 
@@ -129,14 +132,18 @@ const Hero = () => {
                     G<b>a</b>MING
                 </h1>
 
-                <div className="absolute left-[20px] top-35 z-40 text-blue-75">
+                <div className="absolute left-[20px] lg:left-[40px] top-35 z-40 text-blue-75">
                     <h1 className="special-font font-zentry text-[48px] sm:text-[120px] lg:text-[205px] leading-[0.8] uppercase">
                         REDEFI<b>N</b>E
                     </h1>
                     <p className="mt-[10px] max-w-64 text-base sm:text-lg lg:text-xl font-robert-regular">
                         Enter the Metagame Layer <br /> Unleash the Play Economy
                     </p>
+                    <div className="mt-6">
+                        <Button id="watch-trailer" title="Watch Trailer" leftIcon={<TiLocationArrow />} containerClass="bg-yellow-300 flex gap-1" />
+                    </div>
                 </div>
+
             </div>
 
             {/* Back-layer Text */}
