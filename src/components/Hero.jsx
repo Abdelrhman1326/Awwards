@@ -5,6 +5,10 @@ import gsap from "gsap";
 import Button from "./Button";
 import {TiLocationArrow} from "react-icons/ti";
 
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const Hero = () => {
     const totalVideos = 3;
 
@@ -82,8 +86,8 @@ const Hero = () => {
             ease: 'power1.inOut',
             scrollTrigger: {
                 triggerOnce: '#video-frame',
-                start: 'center center',
-                end: 'bottom center',
+                start: 'top top',
+                end: 'center center',
                 scrub: true,
             }
         })
