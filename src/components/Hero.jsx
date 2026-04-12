@@ -128,12 +128,17 @@ const Hero = () => {
                 />
 
                 {/* TYPOGRAPHY */}
-                <h1 className="special-font font-zentry text-[48px] sm:text-[120px] lg:text-[200px] absolute bottom-[20px] right-[20px] z-40 text-blue-75 uppercase leading-[0.75]">
+                <h1 className="special-font font-zentry text-[48px] sm:text-[115px] lg:text-[200px] absolute bottom-[40px] right-[20px] z-40 text-blue-75 uppercase leading-[0.75]">
+                    G<b>a</b>MING
+                </h1>
+
+                {/* black version below the blue one */}
+                <h1 className="special-font font-zentry text-[48px] sm:text-[115px] lg:text-[200px] absolute bottom-[40px] right-[20px] z-0 text-black uppercase leading-[0.75]">
                     G<b>a</b>MING
                 </h1>
 
                 <div className="absolute left-[20px] lg:left-[40px] top-35 z-40 text-blue-75">
-                    <h1 className="special-font font-zentry text-[48px] sm:text-[120px] lg:text-[205px] leading-[0.8] uppercase">
+                    <h1 className="special-font font-zentry text-[48px] sm:text-[115px] lg:text-[205px] leading-[0.8] uppercase">
                         REDEFI<b>N</b>E
                     </h1>
                     <p className="mt-[10px] max-w-64 text-base sm:text-lg lg:text-xl font-robert-regular">
