@@ -35,6 +35,8 @@ const About = () => {
             .to(maskRef.current, {
                 width: "100vw",
                 height: "100vh",
+                objectPosition: "50% 50%",
+                objectFit: "cover",
                 borderRadius: 0,
                 ease: "none",
             });
@@ -59,19 +61,19 @@ const About = () => {
             <div
                 ref={clipRef}
                 id="clip"
-                className="relative w-screen h-dvh mt-10"
+                className="relative w-screen h-dvh mt-10 z-50"
             >
                 <div ref={maskRef} className="about-image">
                     <img
                         src="img/about.webp"
                         alt="Background"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center z-40"
                     />
                 </div>
             </div>
 
             {/* Bottom text */}
-            <div className="text-center about-subtext px-6">
+            <div className="about-subtext px-6 absolute left-1/2 -translate-x-1/2 top-[750px] text-center">
                 <p>The Game of Games begins—your life, now an epic MMORPG</p>
                 <p className="text-gray-500">
                     Zentry unites every player from countless games and platforms
