@@ -33,6 +33,9 @@
         .absolute-center {
             @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
         }
+        .about-subtext {
+            @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
+        }
     }
 
     @font-face {
