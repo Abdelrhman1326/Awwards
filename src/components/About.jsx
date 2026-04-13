@@ -54,7 +54,7 @@ const About = () => {
                     Welcome To Zentry
                 </h2>
 
-                <AnimatedTitle />
+                <AnimatedTitle title="Disc<b>o</b>ver the world's <br /> l<b>a</b>rgest shared <b>a</b>dventure" />
 
             </div>
 
