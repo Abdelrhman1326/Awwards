@@ -1,39 +1,85 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+    const clipRef = useRef(null);
+    const maskRef = useRef(null);
+
+    useGSAP(() => {
+        gsap.set(maskRef.current, {
+            position: "absolute",
+            top: 0,
+            left: "50%",
+            xPercent: -50,
+            yPercent: 0,
+            width: "450px",
+            height: "500px",
+            borderRadius: "24px",
+            overflow: "hidden",
+        });
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: clipRef.current,
+                start: "top top",
+                end: "+=800",
+                scrub: true,
+                pin: true,
+                pinSpacing: true,
+            }
+        })
+            .to(maskRef.current, {
+                width: "100vw",
+                height: "100vh",
+                borderRadius: 0,
+                ease: "none",
+            });
+
+    }, []);
+
     return (
         <div id="about" className="min-h-screen w-screen relative">
-            {/* 1. Text Content Section */}
-            <div className="relative mb-8 mt-36 flex flex-col items-center gap-5 px-5">
+
+            {/* Top text */}
+            <div className="relative mt-36 flex flex-col items-center gap-3 px-5">
                 <h2 className="font-general text-sm uppercase md:text-[10px]">
                     Welcome To Zentry
                 </h2>
 
-                <div className="special-font mt-5 text-center text-4xl uppercase leading-[0.8] md:text-[6rem] font-zentry">
-                    Disc<b>o</b>ver the world's <br/> l<b>a</b>rgest shared <b>a</b>dventure
+                <div className="special-font text-center text-4xl uppercase leading-[0.8] md:text-[6rem] font-zentry">
+                    Disc<b>o</b>ver the world's <br /> l<b>a</b>rgest shared <b>a</b>dventure
                 </div>
-
-
             </div>
 
-            {/* 2. Image Section (Outside the text flex-box) */}
-            <div className="h-dvh w-screen" id="clip">
-                <div className="mask-clip-path about-image h-full w-full">
+            {/* Expanding image section */}
+            <div
+                ref={clipRef}
+                id="clip"
+                className="relative w-screen h-dvh mt-10"
+            >
+                <div ref={maskRef} className="about-image">
                     <img
                         src="img/about.webp"
                         alt="Background"
-                        className="size-full object-cover"
+                        className="w-full h-full object-cover"
                     />
                 </div>
             </div>
-            <div className="about-subtext text-center">
+
+            {/* Bottom text */}
+            <div className="text-center about-subtext px-6">
                 <p>The Game of Games begins—your life, now an epic MMORPG</p>
-                <p className="text-gray-500">Zentry unites every player from countless games and platforms</p>
+                <p className="text-gray-500">
+                    Zentry unites every player from countless games and platforms
+                </p>
             </div>
 
-            <div className="mt-20"></div>
         </div>
-    )
-}
+    );
+};
 
-export default About
+export default About;
