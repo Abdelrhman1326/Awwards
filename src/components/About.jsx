@@ -73,10 +73,12 @@ const About = () => {
             </div>
 
             {/* Bottom text */}
-            <div className="about-subtext px-6 absolute left-1/2 -translate-x-1/2 top-[750px] text-center">
-                <p>The Game of Games begins—your life, now an epic MMORPG</p>
-                <p className="text-gray-500">
-                    Zentry unites every player from countless games and platforms
+            <div className="about-subtext px-6 absolute left-1/2 -translate-x-1/2 top-[780px] text-center">
+                <p className="font-robert-medium text-lg">The Game of Games begins—your life, now an epic MMORPG</p>
+                <p className="text-gray-500 font-robert-medium text-lg">
+                    Zentry unites every player from countless games and platforms,
+                    <br />
+                    both digital and physical, into a unified Play Economy
                 </p>
             </div>
 
