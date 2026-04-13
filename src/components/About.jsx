@@ -3,6 +3,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import AnimatedTitle from "./AnimatedTitle";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
@@ -52,9 +54,8 @@ const About = () => {
                     Welcome To Zentry
                 </h2>
 
-                <div className="special-font text-center text-4xl uppercase leading-[0.8] md:text-[6rem] font-zentry">
-                    Disc<b>o</b>ver the world's <br /> l<b>a</b>rgest shared <b>a</b>dventure
-                </div>
+                <AnimatedTitle />
+
             </div>
 
             {/* Expanding image section */}
