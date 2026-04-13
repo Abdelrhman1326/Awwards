@@ -38,7 +38,7 @@ const About = () => {
                 objectPosition: "50% 50%",
                 objectFit: "cover",
                 borderRadius: 0,
-                ease: "none",
+                ease: "power1.out",
             });
 
     }, []);

@@ -9,6 +9,7 @@ const App = () => {
         <main className="relative min-h-screen w-screen overflow-x-hidden">
             <Hero />
             <About />
+            <section className="min-w-screen min-h-screen bg-black" />
         </main>
     )
 }
