@@ -9,14 +9,11 @@ const About = () => {
                     Welcome To Zentry
                 </h2>
 
-                <div className="mt-5 text-center text-4xl uppercase leading-[0.8] md:text-[6rem]">
-                    Disc<b>o</b>ver the world's <br/> l<b>a</b>rgest shared adventure
+                <div className="special-font mt-5 text-center text-4xl uppercase leading-[0.8] md:text-[6rem] font-zentry">
+                    Disc<b>o</b>ver the world's <br/> l<b>a</b>rgest shared <b>a</b>dventure
                 </div>
 
-                <div className="about-subtext text-center">
-                    <p>The Game of Games begins—your life, now an epic MMORPG</p>
-                    <p className="text-gray-500">Zentry unites every player from countless games and platforms</p>
-                </div>
+
             </div>
 
             {/* 2. Image Section (Outside the text flex-box) */}
@@ -29,6 +26,12 @@ const About = () => {
                     />
                 </div>
             </div>
+            <div className="about-subtext text-center">
+                <p>The Game of Games begins—your life, now an epic MMORPG</p>
+                <p className="text-gray-500">Zentry unites every player from countless games and platforms</p>
+            </div>
+
+            <div className="mt-20"></div>
         </div>
     )
 }
