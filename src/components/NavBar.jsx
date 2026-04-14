@@ -18,7 +18,7 @@ export default function NavBar() {
 
         const tween = gsap.to(navBarRef.current, {
             y: -120,
-            duration: 1,
+            duration: 0.8,
             ease: "power3.inOut",
             paused: true,
         });
