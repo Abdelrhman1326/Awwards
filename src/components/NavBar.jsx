@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function NavBar() {
     const navBarRef = useRef(null);
+    const navBarContentRef = useRef(null);
 
     useGSAP(() => {
         let lastY = window.scrollY;
@@ -44,12 +45,41 @@ export default function NavBar() {
         });
     }, []);
 
+    useGSAP(() => {
+        const el = navBarContentRef.current;
+
+        gsap.set(el, {
+            backgroundColor: "transparent",
+        });
+
+        ScrollTrigger.create({
+            start: "top top",
+            end: "bottom top",
+
+            onUpdate: () => {
+                if (window.scrollY < 10) {
+                    gsap.to(el, {
+                        backgroundColor: "transparent",
+                        duration: 0.5,
+                        overwrite: "auto",
+                    });
+                } else {
+                    gsap.to(el, {
+                        backgroundColor: "#000",
+                        duration: 0.5,
+                        overwrite: "auto",
+                    });
+                }
+            },
+        });
+    }, []);
+
 
     const navItems = ['nexus', 'valut', 'prologue', 'about', 'contact', '..'];
 
     return (
         <header ref={navBarRef} className="fixed top-0 left-0 right-0 z-50 px-6 pt-4">
-            <nav className="mx-auto max-w-full h-16 bg-black rounded-lg flex items-center px-8 gap-8">
+            <nav ref={navBarContentRef} className="mx-auto max-w-full h-16 bg-black rounded-lg flex items-center px-8 gap-8">
                 <img
                     src="img/logo.png"
                     alt="Logo"
