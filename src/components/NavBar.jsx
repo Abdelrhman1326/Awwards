@@ -75,7 +75,7 @@ export default function NavBar() {
     }, []);
 
 
-    const navItems = ['nexus', 'valut', 'prologue', 'about', 'contact', '..'];
+    const navItems = ['nexus', 'valut', 'prologue', 'about', 'contact'];
 
     return (
         <header ref={navBarRef} className="fixed top-0 left-0 right-0 z-50 px-6 pt-4">
@@ -98,6 +98,9 @@ export default function NavBar() {
                             <span className="absolute left-0 -bottom-1 h-[2px] w-full bg-blue-50 origin-right scale-x-0 transition-transform duration-300 group-hover:scale-x-100 group-hover:origin-left" />
                         </li>
                     ))}
+                    <li className="cursor-pointer text-xs text-blue-50 uppercase">
+                        ..
+                    </li>
                 </ul>
             </nav>
         </header>
