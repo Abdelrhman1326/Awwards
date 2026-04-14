@@ -1,11 +1,54 @@
 import Button from "./Button.jsx";
 import { MdNearMe } from "react-icons/md";
+import {useRef} from "react";
+
+import {useGSAP} from "@gsap/react";
+import gsap from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 
 export default function NavBar() {
-    const navItems = ['nexus', 'valut', 'prologue', 'about', 'contact', '..'];
-    return (
+    const navBarRef = useRef(null);
 
-        <header className="fixed top-0 left-0 right-0 z-50 px-6 pt-4">
+    useGSAP(() => {
+        let lastY = window.scrollY;
+
+        const tween = gsap.to(navBarRef.current, {
+            y: -120,
+            duration: 1,
+            ease: "power3.inOut",
+            paused: true,
+        });
+
+        ScrollTrigger.create({
+            start: 0,
+            end: "max",
+            onUpdate: () => {
+                const currentY = window.scrollY;
+                const diff = currentY - lastY;
+
+                if (Math.abs(diff) < 5) return;
+
+                if (diff > 0) {
+                    // scroll down → hide
+                    tween.play();
+                } else {
+                    // scroll up → show
+                    tween.reverse();
+                }
+
+                lastY = currentY;
+            },
+        });
+    }, []);
+
+
+    const navItems = ['nexus', 'valut', 'prologue', 'about', 'contact', '..'];
+
+    return (
+        <header ref={navBarRef} className="fixed top-0 left-0 right-0 z-50 px-6 pt-4">
             <nav className="mx-auto max-w-full h-16 bg-black rounded-lg flex items-center px-8 gap-8">
                 <img
                     src="img/logo.png"
@@ -30,4 +73,3 @@ export default function NavBar() {
         </header>
     );
 }
-

@@ -65,7 +65,7 @@ const About = () => {
             <div
                 ref={clipRef}
                 id="clip"
-                className="relative w-screen h-dvh mt-10 z-50"
+                className="relative w-screen h-dvh mt-10 z-40"
             >
                 <div ref={maskRef} className="about-image">
                     <img
