@@ -26,30 +26,6 @@
         margin: 0;
     }
 
-    @layer utilities {
-        .mask-clip-path {
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-        }
-        .absolute-center {
-            @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
-        }
-        .about-subtext {
-            @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
-        }
-        .about-image {
-            @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
-        }
-        .animated-title {
-            @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] text-white sm:px-32 md:text-[6rem];
-        }
-        .animated-word {
-            @apply special-font font-zentry font-black opacity-0;
-            transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
-            transform-origin: 50% 50% -150px !important;
-            will-change: opacity, transform;
-        }
-    }
-
     @font-face {
         font-family: 'circular-web';
         src: url('/fonts/circularweb-book.woff2') format('woff2');
@@ -85,4 +61,28 @@
         font-style: normal;
     }
 
+}
+
+@layer utilities {
+    .mask-clip-path {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .absolute-center {
+        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+    }
+    .about-subtext {
+        @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
+    }
+    .about-image {
+        @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
+    }
+    .animated-title {
+        @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] text-white sm:px-32 md:text-[6rem];
+    }
+    .animated-word {
+        @apply special-font font-zentry font-black opacity-0;
+        transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
+        transform-origin: 50% 50% -150px !important;
+        will-change: opacity, transform;
+    }
 }
