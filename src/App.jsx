@@ -4,6 +4,7 @@ import './App.css'
 import Hero from './components/Hero';
 import About from './components/About';
 import NavBar from "./components/NavBar.jsx";
+import Features from "./components/Features.jsx";
 
 const App = () => {
     return (
@@ -11,7 +12,7 @@ const App = () => {
             <NavBar />
             <Hero />
             <About />
-            <section className="min-w-screen min-h-screen bg-black" />
+            <Features />
         </main>
     )
 }
