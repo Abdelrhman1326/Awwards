@@ -25,7 +25,6 @@ const BentoCard = ({ src, title, description }) => {
                     className="max-w-xs special-font font-robert-regular text-blue-50 text-md md:text-lg"
                     dangerouslySetInnerHTML={{ __html: description || "" }}
                 />
-
             </div>
         </div>
     )
