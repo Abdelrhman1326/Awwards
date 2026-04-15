@@ -26,10 +26,10 @@ const Features = () => {
                         description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
                     />
                 </div>
-                <div className="bg-black grid grid-cols-2 grid-rows-3 gap-x-8 gap-y-6 justify-items-center">
+                <div className="bg-black grid grid-cols-2 grid-rows-4 gap-x-8 gap-y-6 justify-items-center">
 
                     {/* ZIGMA (left tall card) */}
-                    <div className="col-start-1 col-end-2 row-start-1 row-end-3 w-[40vw] h-full overflow-hidden">
+                    <div className="md:col-start-1 col-start-1 col-end-3 md:col-end-2 md:row-start-1 md:row-end-3 md:w-[40vw] w-[82vw] md:h-full h-[35vh] overflow-hidden">
                         <BentoCard
                             src="/videos/feature-2.mp4"
                             title="zig<b>m</b>a"
@@ -38,7 +38,7 @@ const Features = () => {
                     </div>
 
                     {/* NEXUS (top right) */}
-                    <div className="col-start-2 col-end-3 row-start-1 row-end-2 w-[40vw] h-[42vh] overflow-hidden">
+                    <div className="md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-2 md:w-[40vw] md:h-[42vh] overflow-hidden">
                         <BentoCard
                             src="/videos/feature-3.mp4"
                             title="n<b>e</b>xus"
@@ -47,14 +47,13 @@ const Features = () => {
                     </div>
 
                     {/* AZUL (bottom right) */}
-                    <div className="col-start-2 col-end-3 row-start-2 row-end-3 w-[40vw] h-[42vh] overflow-hidden">
+                    <div className="md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3 md:w-[40vw] md:h-[42vh] overflow-hidden">
                         <BentoCard
                             src="/videos/feature-4.mp4"
                             title="az<b>u</b>l"
                             description="Cross-world AI Agent - elevating your gameplay to be more fun and productive."
                         />
                     </div>
-
                 </div>
             </div>
         </section>
