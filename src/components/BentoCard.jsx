@@ -17,12 +17,12 @@ const BentoCard = ({ src, title, description }) => {
             <div className="relative z-10 flex flex-col px-6 py-7 gap-5">
 
                 <h2
-                    className="special-font font-zentry text-blue-50 text-6xl uppercase"
+                    className="special-font font-zentry text-blue-50 text-5xl md:text-6xl uppercase"
                     dangerouslySetInnerHTML={{ __html: title || "" }}
                 />
 
                 <p
-                    className="max-w-xs special-font font-robert-regular text-blue-50 text-md"
+                    className="max-w-xs special-font font-robert-regular text-blue-50 text-md md:text-lg"
                     dangerouslySetInnerHTML={{ __html: description || "" }}
                 />
 
@@ -31,4 +31,4 @@ const BentoCard = ({ src, title, description }) => {
     )
 }
 
-export default BentoCard
+export default BentoCard;
