@@ -1,12 +1,10 @@
-
-import React from 'react';
 import BentoCard from './BentoCard';
 
 const Features = () => {
     return (
         // Changed max-h-screen to h-screen so the background actually shows up
         <section className="min-h-screen bg-black relative overflow-hidden">
-            <div className="text-blue-50 font-circular text-lg mt-[120px] ml-[13vw] mb-[13vh] max-w-[80vw]">
+            <div className="text-blue-50 font-circular text-lg mt-[120px] ml-[10vw] mb-[13vh] max-w-[80vw]">
                 {/* Wrapped title in a span or heading for better control */}
                 <span className="block mb-2 font-bold uppercase tracking-tighter">
                     Into Metagame Layer
@@ -40,7 +38,7 @@ const Features = () => {
                     </div>
 
                     {/* NEXUS (top right) */}
-                    <div className="col-start-2 col-end-3 row-start-1 row-end-2 w-[40vw] h-100 overflow-hidden rounded-lg border">
+                    <div className="col-start-2 col-end-3 row-start-1 row-end-2 w-[40vw] h-[42vh] overflow-hidden">
                         <BentoCard
                             src="/videos/feature-3.mp4"
                             title="n<b>e</b>xus"
@@ -49,7 +47,7 @@ const Features = () => {
                     </div>
 
                     {/* AZUL (bottom right) */}
-                    <div className="col-start-2 col-end-3 row-start-2 row-end-3 w-[40vw] h-100 overflow-hidden">
+                    <div className="col-start-2 col-end-3 row-start-2 row-end-3 w-[40vw] h-[42vh] overflow-hidden">
                         <BentoCard
                             src="/videos/feature-4.mp4"
                             title="az<b>u</b>l"
