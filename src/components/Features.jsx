@@ -18,8 +18,8 @@ const Features = () => {
                 </p>
 
             </div>
-            <div className="bg-black min-w-screen h-[1000px] border-t-1 border-white">
-                hello
+            <div className="bg-black min-w-screen h-[1000px] border-t-1 border-white flex justify-center">
+                <div id="card1" className="bg-white mb-7 h-96 md:h-[65vh] w-[75vw] overflow-hidden rounded-md"></div>
             </div>
         </section>
     )
