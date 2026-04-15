@@ -2,7 +2,7 @@ import React from 'react'
 
 const BentoCard = ({ src, title, description }) => {
     return (
-        <div className="relative size-full overflow-hidden">
+        <div className="relative size-full overflow-hidden border-[1px] border-white/25 rounded-lg">
 
             {/* Background video */}
             <video
