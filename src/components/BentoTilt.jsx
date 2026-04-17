@@ -19,7 +19,7 @@ const BentoTilt = ({ children }) => {
         const rotXPerc = (x / w) - 0.5;
         const rotYPerc = (y / h) - 0.5;
 
-        const maxRotate = 30;
+        const maxRotate = 20; // increasing this value will make the rotations degrees higher
 
         const rotateX = rotXPerc * maxRotate;
         const rotateY = -rotYPerc * maxRotate;
@@ -28,7 +28,7 @@ const BentoTilt = ({ children }) => {
             perspective(1000px)
             rotateX(${rotateX}deg)
             rotateY(${rotateY}deg)
-            scale(1.03)
+            scale(0.98)
         `;
     };
 
