@@ -26,7 +26,7 @@ const Features = () => {
                         description="A cross-platform metagame app, turning your activities across Web2 and Web3 games into a rewarding adventure."
                     />
                 </div>
-                <div className="bg-black grid grid-cols-2 grid-rows-4 gap-x-5 gap-y-6 justify-items-center">
+                <div className="bg-black grid grid-cols-2 grid-rows-5 gap-x-4 gap-y-6 justify-items-center">
 
                     {/* ZIGMA (left tall card) */}
                     <div className="md:col-start-1 col-start-1 col-end-3 md:col-end-2 md:row-start-1 md:row-end-3 md:w-[42vw] w-[85vw] md:h-full h-[35vh] overflow-hidden">
@@ -52,6 +52,22 @@ const Features = () => {
                             src="/videos/feature-4.mp4"
                             title="az<b>u</b>l"
                             description="Cross-world AI Agent - elevating your gameplay to be more fun and productive."
+                        />
+                    </div>
+                    {/* LAST ROW — TWO VIDEOS SIDE BY SIDE */}
+                    <div className="col-start-1 col-end-2 min-w-full md:row-start-3 md:row-end-4 row-start-4 row-end-5 overflow-hidden
+                                    bg-violet-300 rounded-lg
+                                    [&_h2]:!text-black
+                    ">
+                        <BentoCard
+                            title="M<b>O</b>RE <br /> CO<b>M</b>ING <br /> S<b>O</b>ON!"
+                        />
+                    </div>
+
+                    <div className="col-start-2 col-end-3 min-w-full md:row-start-3 md:row-end-4 row-start-4 row-end-5 overflow-hidden
+                    ">
+                        <BentoCard
+                            src="/videos/feature-5.mp4"
                         />
                     </div>
                 </div>
