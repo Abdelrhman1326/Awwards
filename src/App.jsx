@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import NavBar from "./components/NavBar.jsx";
 import Features from "./components/Features.jsx";
+import Story from "./components/Story.jsx";
 
 const App = () => {
     return (
@@ -13,6 +14,7 @@ const App = () => {
             <Hero />
             <About />
             <Features />
+            <Story />
         </main>
     )
 }

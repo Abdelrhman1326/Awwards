@@ -19,7 +19,7 @@ const Features = () => {
                 </p>
             </div>
 
-            <div className="bg-black min-w-screen h-auto grid justify-items-center">
+            <div className="bg-black min-w-screen h-auto grid justify-items-center auto-rows-max mb-60">
 
                 {/* CARD 1 */}
                 <div id="card1" className="relative z-10 hover:z-50 h-96 md:h-[65vh] w-[85vw] mb-7">
@@ -32,7 +32,7 @@ const Features = () => {
                     </BentoTilt>
                 </div>
 
-                <div className="bg-black grid grid-cols-2 grid-rows-5 gap-x-4 gap-y-6 justify-items-center">
+                <div className="bg-black grid grid-cols-2 gap-x-4 gap-y-6 justify-items-center auto-rows-max">
 
                     {/* CARD 2 */}
                     <div className="relative z-10 hover:z-50 md:col-start-1 col-start-1 col-end-3 md:col-end-2 md:row-start-1 md:row-end-3 md:w-[42vw] w-[85vw] md:h-full h-[35vh]">
@@ -66,9 +66,8 @@ const Features = () => {
                             />
                         </BentoTilt>
                     </div>
-
                     {/* LAST ROW LEFT */}
-                    <div className="relative z-10 hover:z-50 col-start-1 col-end-2 min-w-full md:row-start-3 md:row-end-4 row-start-4 row-end-5
+                    <div className="relative z-10 hover:z-50 col-start-1 col-end-2 min-w-full min-h-[350px] md:row-start-3 md:row-end-4 row-start-4 row-end-5
                                     bg-violet-300 rounded-lg
                                     [&_h2]:!text-black">
                         <div className="relative size-full border-[1px] border-white/25 rounded-lg">
@@ -87,7 +86,6 @@ const Features = () => {
                             <BentoCard src="/videos/feature-5.mp4" />
                         </BentoTilt>
                     </div>
-
                 </div>
             </div>
         </section>
