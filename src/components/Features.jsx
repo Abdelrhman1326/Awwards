@@ -20,7 +20,9 @@ const Features = () => {
             </div>
 
             <div className="bg-black min-w-screen h-auto grid justify-items-center">
-                <div id="card1" className="h-96 md:h-[65vh] w-[85vw] overflow-hidden mb-7">
+
+                {/* CARD 1 */}
+                <div id="card1" className="relative z-10 hover:z-50 h-96 md:h-[65vh] w-[85vw] mb-7">
                     <BentoTilt>
                         <BentoCard
                             src="/videos/feature-1.mp4"
@@ -32,7 +34,8 @@ const Features = () => {
 
                 <div className="bg-black grid grid-cols-2 grid-rows-5 gap-x-4 gap-y-6 justify-items-center">
 
-                    <div className="md:col-start-1 col-start-1 col-end-3 md:col-end-2 md:row-start-1 md:row-end-3 md:w-[42vw] w-[85vw] md:h-full h-[35vh] overflow-hidden">
+                    {/* CARD 2 */}
+                    <div className="relative z-10 hover:z-50 md:col-start-1 col-start-1 col-end-3 md:col-end-2 md:row-start-1 md:row-end-3 md:w-[42vw] w-[85vw] md:h-full h-[35vh]">
                         <BentoTilt>
                             <BentoCard
                                 src="/videos/feature-2.mp4"
@@ -42,7 +45,8 @@ const Features = () => {
                         </BentoTilt>
                     </div>
 
-                    <div className="justify-self-start md:col-start-2 col-start-1 col-end-3 row-start-2 row-end-3 md:col-end-3 md:row-start-1 md:row-end-2 md:w-[42vw] md:h-[42vh] overflow-hidden">
+                    {/* CARD 3 */}
+                    <div className="relative z-10 hover:z-50 justify-self-start md:col-start-2 col-start-1 col-end-3 row-start-2 row-end-3 md:col-end-3 md:row-start-1 md:row-end-2 md:w-[42vw] md:h-[42vh]">
                         <BentoTilt>
                             <BentoCard
                                 src="/videos/feature-3.mp4"
@@ -52,7 +56,8 @@ const Features = () => {
                         </BentoTilt>
                     </div>
 
-                    <div className="justify-self-end md:col-start-2 col-start-1 col-end-3 row-start-3 row-end-4 md:col-end-3 md:row-start-2 md:row-end-3 md:w-[42vw] md:h-[42vh] overflow-hidden">
+                    {/* CARD 4 */}
+                    <div className="relative z-10 hover:z-50 justify-self-end md:col-start-2 col-start-1 col-end-3 row-start-3 row-end-4 md:col-end-3 md:row-start-2 md:row-end-3 md:w-[42vw] md:h-[42vh]">
                         <BentoTilt>
                             <BentoCard
                                 src="/videos/feature-4.mp4"
@@ -62,12 +67,11 @@ const Features = () => {
                         </BentoTilt>
                     </div>
 
-                    {/* LAST ROW — TWO VIDEOS SIDE BY SIDE */}
-                    <div className="col-start-1 col-end-2 min-w-full md:row-start-3 md:row-end-4 row-start-4 row-end-5 overflow-hidden
+                    {/* LAST ROW LEFT */}
+                    <div className="relative z-10 hover:z-50 col-start-1 col-end-2 min-w-full md:row-start-3 md:row-end-4 row-start-4 row-end-5
                                     bg-violet-300 rounded-lg
-                                    [&_h2]:!text-black
-                    ">
-                        <div className="relative size-full overflow-hidden border-[1px] border-white/25 rounded-lg">
+                                    [&_h2]:!text-black">
+                        <div className="relative size-full border-[1px] border-white/25 rounded-lg">
                             <div className="relative z-10 flex flex-col px-6 py-7 gap-5">
                                 <h2 className="special-font font-zentry text-blue-50 text-5xl md:text-6xl uppercase">
                                     M<b>O</b>RE <br /> CO<b>M</b>ING <br /> S<b>O</b>ON!
@@ -77,7 +81,8 @@ const Features = () => {
                         </div>
                     </div>
 
-                    <div className="col-start-2 col-end-3 min-w-full md:row-start-3 md:row-end-4 row-start-4 row-end-5 overflow-hidden">
+                    {/* LAST ROW RIGHT */}
+                    <div className="relative z-10 hover:z-50 col-start-2 col-end-3 min-w-full md:row-start-3 md:row-end-4 row-start-4 row-end-5">
                         <BentoTilt>
                             <BentoCard src="/videos/feature-5.mp4" />
                         </BentoTilt>
@@ -90,4 +95,3 @@ const Features = () => {
 };
 
 export default Features;
-
