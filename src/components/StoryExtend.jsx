@@ -12,12 +12,19 @@ const StoryExtend = () => {
                         className="font-robert-normal text-xs min-w-[120px] md:text-sm bg-blue-50 text-black/90 px-6 py-3 rounded-full cursor-pointer z-40">
                         contact us
                     </button>
-                    <img
-                        src="/img/swordman.webp"
-                        alt="swordman"
-                        className="absolute w-[400px] right-10 bottom-28"
-                        style={{ clipPath: "polygon(16% 0%, 90% 15%, 75% 95.3%, 0% 95.3%)" }}
-                    />
+                    <div>
+                        <img
+                            src="/img/swordman-partial.webp"
+                            alt="swordman"
+                            className="absolute w-[400px] bottom-28 right-10 z-10"
+                        />
+                        <img
+                            src="/img/swordman.webp"
+                            alt="swordman"
+                            className="absolute w-[400px] right-10 bottom-28"
+                            style={{ clipPath: "polygon(16% 0%, 90% 15%, 75% 95.3%, 0% 95.3%)" }}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
