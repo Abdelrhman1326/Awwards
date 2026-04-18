@@ -30,7 +30,7 @@ const Story = () => {
     };
 
     return (
-        <section className="relative p-5 min-h-[600px] md:min-h-[1000px] bg-black text-blue-50 flex flex-col gap-y-4 pb-22">
+        <section className="relative p-5 bg-black text-blue-50 flex flex-col gap-y-4 pb-22">
             <div className="z-40 flex flex-col items-center gap-y-2">
                 <p className="uppercase text-center">the multiversal ip world</p>
                 <AnimatedTitle

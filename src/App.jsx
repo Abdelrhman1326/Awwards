@@ -6,6 +6,8 @@ import About from './components/About';
 import NavBar from "./components/NavBar.jsx";
 import Features from "./components/Features.jsx";
 import Story from "./components/Story.jsx";
+import StoryExtend from "./components/StoryExtend.jsx";
+import Footer from "./components/Footer.jsx";
 
 const App = () => {
     return (
@@ -15,6 +17,8 @@ const App = () => {
             <About />
             <Features />
             <Story />
+            <StoryExtend />
+            <Footer />
         </main>
     )
 }
