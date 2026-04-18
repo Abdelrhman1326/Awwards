@@ -21,7 +21,7 @@ const Hero = () => {
     const backgroundVideoRef = useRef(null);
     const miniVideoRef = useRef(null);
     const nextVideoRef = useRef(null);
-    const miniContainerRef = useRef(null); // Ref for the hover container
+    const miniContainerRef = useRef(null);
 
     const getVideoSrc = (index) => `videos/hero-${index + 1}.mp4`;
 
@@ -44,16 +44,11 @@ const Hero = () => {
         }
     }, [loadedVideos]);
 
-    // GSAP Expansion & Hover Reset Logic
     useGSAP(() => {
         if (hasClicked && nextVideoRef.current) {
-            // 1. FORCED HOVER RESET: Disable pointer events so Tailwind "forgets" the hover state
             gsap.set(miniContainerRef.current, { pointerEvents: 'none' });
-
-            // 2. Prepare the expanding video
             gsap.set(nextVideoRef.current, { visibility: 'visible', opacity: 1 });
 
-            // 3. Animate the expansion
             gsap.to(nextVideoRef.current, {
                 transformOrigin: 'center center',
                 width: '100%',
@@ -64,10 +59,7 @@ const Hero = () => {
                     nextVideoRef.current?.play().catch(() => {});
                 },
                 onComplete: () => {
-                    // Hide the animator video once expansion is done
                     gsap.set(nextVideoRef.current, { visibility: 'hidden' });
-
-                    // 4. RE-ENABLE HOVER: User must move mouse away and back to hover again
                     gsap.set(miniContainerRef.current, { pointerEvents: 'all' });
                 }
             });
@@ -95,6 +87,81 @@ const Hero = () => {
 
     return (
         <div className="relative h-dvh w-screen overflow-x-hidden">
+
+            <style>{`
+                .three-body {
+                    --uib-size: 35px;
+                    --uib-speed: 0.8s;
+                    --uib-color: #5724FF;
+                    position: relative;
+                    display: inline-block;
+                    height: var(--uib-size);
+                    width: var(--uib-size);
+                    animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
+                }
+                .three-body__dot {
+                    position: absolute;
+                    height: 100%;
+                    width: 30%;
+                }
+                .three-body__dot::after {
+                    content: '';
+                    position: absolute;
+                    height: 0%;
+                    width: 100%;
+                    padding-bottom: 100%;
+                    background-color: var(--uib-color);
+                    border-radius: 50%;
+                }
+                .three-body__dot:nth-child(1) {
+                    bottom: 5%;
+                    left: 0;
+                    transform: rotate(60deg);
+                    transform-origin: 50% 85%;
+                }
+                .three-body__dot:nth-child(1)::after {
+                    bottom: 0;
+                    left: 0;
+                    animation: wobble1 var(--uib-speed) infinite ease-in-out;
+                    animation-delay: calc(var(--uib-speed) * -0.3);
+                }
+                .three-body__dot:nth-child(2) {
+                    bottom: 5%;
+                    right: 0;
+                    transform: rotate(-60deg);
+                    transform-origin: 50% 85%;
+                }
+                .three-body__dot:nth-child(2)::after {
+                    bottom: 0;
+                    left: 0;
+                    animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15) ease-in-out;
+                }
+                .three-body__dot:nth-child(3) {
+                    bottom: -5%;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    transform-origin: 50% 85%;
+                }
+                .three-body__dot:nth-child(3)::after {
+                    top: 0;
+                    left: 0;
+                    animation: wobble2 var(--uib-speed) infinite calc(var(--uib-speed) * -0.45) ease-in-out;
+                }
+                @keyframes spin78236 {
+                    0%   { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+                @keyframes wobble1 {
+                    0%, 100% { transform: translateY(0%) scale(1); opacity: 1; }
+                    50%      { transform: translateY(-66%) scale(0.65); opacity: 0.8; }
+                }
+                @keyframes wobble2 {
+                    0%, 100% { transform: translateY(0%) scale(1); opacity: 1; }
+                    50%      { transform: translateY(66%) scale(0.65); opacity: 0.8; }
+                }
+            `}</style>
+
             {/* --- LOADING SCREEN --- */}
             {isLoading && (
                 <div className="flex items-center justify-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
@@ -110,7 +177,6 @@ const Hero = () => {
                 id="video-frame"
                 className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
             >
-                {/* 1. THE MAIN BACKGROUND */}
                 <video
                     key={`bg-${currentIndex}`}
                     ref={backgroundVideoRef}
@@ -120,7 +186,6 @@ const Hero = () => {
                     onLoadedData={handleVideoLoad}
                 />
 
-                {/* 2. THE MINI PREVIEW (The Trigger) */}
                 <div className="mask-clip-path absolute left-1/2 top-1/2 z-50 size-64 -translate-x-1/2 -translate-y-1/2 cursor-pointer overflow-hidden rounded-lg">
                     <div
                         ref={miniContainerRef}
@@ -138,7 +203,6 @@ const Hero = () => {
                     </div>
                 </div>
 
-                {/* 3. THE EXPANDING ANIMATOR */}
                 <video
                     key={`next-${currentIndex}`}
                     ref={nextVideoRef}
@@ -149,11 +213,9 @@ const Hero = () => {
                     onLoadedData={handleVideoLoad}
                 />
 
-                {/* TYPOGRAPHY */}
                 <h1 className="special-font font-zentry text-[48px] sm:text-[110px] lg:text-[200px] absolute bottom-[40px] right-[20px] z-40 text-blue-75 uppercase leading-[0.75]">
                     G<b>a</b>MING
                 </h1>
-
 
                 <div className="absolute left-[20px] lg:left-[40px] top-35 z-40 text-blue-75">
                     <h1 className="special-font font-zentry text-[48px] sm:text-[110px] lg:text-[205px] leading-[0.8] uppercase">
@@ -166,10 +228,8 @@ const Hero = () => {
                         <Button id="watch-trailer" title="Watch Trailer" leftIcon={<TiLocationArrow />} containerClass="bg-yellow-300 flex gap-1" />
                     </div>
                 </div>
-
             </div>
 
-            {/* black version below the blue one */}
             <h1 className="special-font font-zentry text-[48px] sm:text-[110px] lg:text-[200px] absolute bottom-[40px] right-[20px] z-0 text-black uppercase leading-[0.75]">
                 G<b>a</b>MING
             </h1>
