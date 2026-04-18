@@ -1,3 +1,7 @@
 # AWWARDS
 ## Award-winning website
-[![My Skills](https://skillicons.dev/icons?i=gsap,react,tailwind&theme=light)](https://skillicons.dev)
+
+<p align="left">
+  <img src="https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=black" />
+  <img src="https://skillicons.dev/icons?i=react,tailwind&theme=light" />
+</p>
