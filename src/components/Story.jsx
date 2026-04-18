@@ -35,7 +35,7 @@ const Story = () => {
                 <p className="uppercase text-center">the multiversal ip world</p>
                 <AnimatedTitle
                     title="The st<b>o</b>ry of a hidden realm"
-                    containerClass="special-font text-center text-4xl uppercase leading-[0.8] md:text-[6rem] text-white font-zentry"
+                    containerClass="special-font text-center text-4xl uppercase leading-[0.8] md:text-[6rem] text-white font-zentry drop-shadow-2xl"
                 />
             </div>
 
