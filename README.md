@@ -7,3 +7,34 @@
 <p align="center">
   <b>Award-winning website (Zentry.com clone)</b>
 </p>
+
+---
+
+## 📸 Screenshots
+
+### Hero
+<p align="center">
+  <img src="screenshots/hero-1.png" width="49%" />
+  <img src="screenshots/hero-2.png" width="49%" />
+</p>
+<p align="center">
+  <img src="screenshots/hero-3.png" width="49%" />
+</p>
+
+### Features
+<p align="center">
+  <img src="screenshots/features-1.png" width="49%" />
+  <img src="screenshots/features-2.png" width="49%" />
+</p>
+
+### Story
+<p align="center">
+  <img src="screenshots/story-1.png" width="49%" />
+  <img src="screenshots/story-2.png" width="49%" />
+</p>
+
+### About
+<p align="center">
+  <img src="screenshots/about-1.png" width="49%" />
+  <img src="screenshots/about-2.png" width="49%" />
+</p>
