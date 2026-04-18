@@ -15,16 +15,28 @@ const StoryExtend = () => {
                     <div>
                         <img
                             src="/img/swordman-partial.webp"
-                            alt="swordman"
+                            alt=""
                             className="absolute w-[400px] bottom-28 right-10 z-10"
                         />
                         <img
                             src="/img/swordman.webp"
-                            alt="swordman"
+                            alt=""
                             className="absolute w-[400px] right-10 bottom-28"
                             style={{ clipPath: "polygon(16% 0%, 90% 15%, 75% 95.3%, 0% 95.3%)" }}
                         />
-                    </div>
+                        </div>
+                        <img
+                            src="/img/contact-1.webp"
+                            alt=""
+                            className="absolute w-[355px] bottom-[392px] left-35"
+                            style={{ clipPath: "polygon(22% 0, 75% 0, 70% 73%, 31% 81%)" }}
+                        />
+                    <img
+                        src="/img/contact-2.webp"
+                        alt=""
+                        className="absolute w-[350px] bottom-[-14px] left-35"
+                        style={{ clipPath: "polygon(28% 15%, 28% 15%, 90% 33%, 20% 33%)"}}
+                    />
                 </div>
             </div>
         </div>
