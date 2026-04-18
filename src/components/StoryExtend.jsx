@@ -17,12 +17,12 @@ const StoryExtend = () => {
                         <img
                             src="/img/swordman-partial.webp"
                             alt=""
-                            className="absolute w-[300px] md:w-[400px] bottom-[200px] md:bottom-[-25px] left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-[-20px] lg:right-0"
+                            className="absolute w-[300px] md:w-[400px] bottom-[200px] md:bottom-[-23px] left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-[-20px] lg:right-0"
                         />
                         <img
                             src="/img/swordman.webp"
                             alt=""
-                            className="absolute w-[300px] md:w-[400px] bottom-[200px] md:bottom-[-25px] left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-[-20px] lg:right-0"
+                            className="absolute w-[300px] md:w-[400px] bottom-[200px] md:bottom-[-23px] left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-[-20px] lg:right-0"
                             style={{ clipPath: "polygon(16% 0%, 90% 15%, 75% 95.3%, 0% 95.3%)" }}
                         />
                     </div>
@@ -30,13 +30,13 @@ const StoryExtend = () => {
                     <img
                         src="/img/contact-1.webp"
                         alt=""
-                        className="absolute w-[355px] bottom-[258px] hidden md:block md:left-[-80px] lg:left-15"
+                        className="absolute w-[355px] bottom-[257px] hidden md:block md:left-[-80px] lg:left-15"
                         style={{ clipPath: "polygon(22% 0, 75% 0, 70% 73%, 31% 81%)" }}
                     />
                     <img
                         alt=""
                         src="/img/contact-2.webp"
-                        className="absolute w-[350px] bottom-[-156px] hidden md:block md:left-[-80px] lg:left-15"
+                        className="absolute w-[350px] bottom-[-155.5px] hidden md:block md:left-[-80px] lg:left-15"
                         style={{ clipPath: "polygon(28% 12%, 28% 12%, 90% 30%, 20% 30%)"}}
                     />
                 </div>
